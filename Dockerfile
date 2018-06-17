@@ -6,7 +6,7 @@ RUN         mkdir -p ~/.pip ; \
             echo "index-url=https://pypi.douban.com/simple/" >>~/.pip/pip.conf ; \
             ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime ; \
             yum install epel-release -y ;  \
-            yum install -y python-pip gcc gcc-c++ make python-devel openssh-server ; \
+            yum install -y python-pip gcc gcc-c++ make python-devel wget openssh-server ; \
             yum clean all ; \
             pip install -U pip ; \
             pip install -U wheel setuptools ; \
