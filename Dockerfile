@@ -16,9 +16,8 @@ RUN         mkdir -p ~/.pip ; \
             tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz ; \
             rm -f go1.10.3.linux-amd64.tar.gz: \
             yum clean all ; \
-            rm -rf ~/.cache
-
-RUN         ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key; \
+            rm -rf ~/.cache ; \
+            ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key; \
             ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key ; \
             ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
 
