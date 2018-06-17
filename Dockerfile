@@ -7,7 +7,6 @@ RUN         mkdir -p ~/.pip ; \
             ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime ; \
             yum install epel-release -y ;  \
             yum install -y python-pip gcc gcc-c++ make python-devel wget openssh-server git vim; \
-            yum clean all ; \
             pip install -U pip ; \
             pip install -U wheel setuptools ; \
             pip install -U pyyaml ; \
@@ -18,6 +17,7 @@ RUN         mkdir -p ~/.pip ; \
             wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz ; \
             tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz ; \
             rm -f go1.10.3.linux-amd64.tar.gz: \
+            yum clean all ; \
             rm -rf ~/.cache
 
 ENV GOROOT /usr/local/go
