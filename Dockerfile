@@ -15,7 +15,9 @@ RUN         mkdir -p ~/.pip ; \
             curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo  ; \
             yum -y install yarn  ; \
             wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz ; \
-            tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
+            tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz ; \
+            rm -f go1.10.3.linux-amd64.tar.gz: \
+            rm -rf ~/.cache
 
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
