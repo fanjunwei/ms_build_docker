@@ -17,9 +17,18 @@ RUN         mkdir -p ~/.pip ; \
             rm -f go1.10.3.linux-amd64.tar.gz: \
             yum clean all ; \
             rm -rf ~/.cache ; \
-            ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key; \
-            ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key ; \
-            ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
+            ssh-keygen -q -t rsa1 -f /etc/ssh/ssh_host_key -C '' -N ''; \
+            chmod 640 /etc/ssh/ssh_host_key; \
+            chmod 644 /etc/ssh/ssh_host_key.pub; \
+            ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N ''; \
+            chmod 640 /etc/ssh/ssh_host_rsa_key; \
+            chmod 644 /etc/ssh/ssh_host_rsa_key.pub; \
+            ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -C '' -N ''; \
+            chmod 640 /etc/ssh/ssh_host_ecdsa_key; \
+            chmod 644 /etc/ssh/ssh_host_ecdsa_key.pub; \
+            ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -C '' -N ''; \
+            chmod 640 /etc/ssh/ssh_host_ed25519_key; \
+            chmod 644 /etc/ssh/ssh_host_ed25519_key.pub
 
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
