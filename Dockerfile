@@ -35,8 +35,10 @@ RUN         mkdir -p ~/.pip ; \
             chmod 644 /etc/ssh/ssh_host_ed25519_key.pub; \
             echo -e "123456\n123456" |passwd
 
+VOLUME ["/root"]
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
+WORKDIR /root
 
 EXPOSE 22
 CMD    ["/usr/sbin/sshd", "-D"]
