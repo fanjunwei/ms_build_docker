@@ -20,7 +20,7 @@ RUN         mkdir -p ~/.pip ; \
 
 RUN         touch /etc/rc.d/init.d/functions ; \
             success() { return 0 ;  }; \
-            /usr/sbin/sshd-keygen
+            /usr/sbin/sshd-keygen -q
 
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
