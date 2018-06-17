@@ -13,7 +13,7 @@ RUN         mkdir -p ~/.pip ; \
             curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - ; \
             yum -y install nodejs ; \
             curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo  ; \
-            yum install yarn  ; \
+            yum -y install yarn  ; \
             wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz ; \
             tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz ; \
 
