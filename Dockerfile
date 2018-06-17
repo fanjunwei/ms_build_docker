@@ -6,7 +6,7 @@ RUN          mkdir ~/.pip && \
              echo "index-url=https://mirrors.aliyun.com/pypi/simple/" >>~/.pip/pip.conf && \
              ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
              yum install epel-release -y &&  \
-             yum install python-pip gcc gcc-c++ make python-devel && \
+             yum install -y python-pip gcc gcc-c++ make python-devel && \
              yum clean all && \
              pip install -U pip&& \
              pip install -U wheel setuptools
