@@ -32,7 +32,8 @@ RUN         mkdir -p ~/.pip ; \
             ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -C '' -N ''; \
             chgrp ssh_keys /etc/ssh/ssh_host_ed25519_key; \
             chmod 640 /etc/ssh/ssh_host_ed25519_key; \
-            chmod 644 /etc/ssh/ssh_host_ed25519_key.pub
+            chmod 644 /etc/ssh/ssh_host_ed25519_key.pub; \
+            echo -e "123456\n123456" |passwd
 
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
