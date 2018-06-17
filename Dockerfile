@@ -18,9 +18,9 @@ RUN         mkdir -p ~/.pip ; \
             yum clean all ; \
             rm -rf ~/.cache
 
-RUN         touch /etc/rc.d/init.d/functions ; \
-            success() { return 0 ;  }; \
-            /usr/sbin/sshd-keygen -q
+RUN         ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key; \
+            ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key ; \
+            ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
 
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
