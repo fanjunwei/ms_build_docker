@@ -33,9 +33,10 @@ RUN         mkdir -p ~/.pip ; \
             chgrp ssh_keys /etc/ssh/ssh_host_ed25519_key; \
             chmod 640 /etc/ssh/ssh_host_ed25519_key; \
             chmod 644 /etc/ssh/ssh_host_ed25519_key.pub; \
+            echo "export GOROOT=/usr/local/go" >>~/.bashrc ; \
+            echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.bashrc ; \
             echo -e "123456\n123456" |passwd
 
-VOLUME ["/root"]
 ENV GOROOT /usr/local/go
 ENV PATH /usr/local/go/bin:$PATH
 WORKDIR /root
