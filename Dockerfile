@@ -8,7 +8,7 @@ RUN         mkdir -p ~/.pip ; \
             curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - ; \
             curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo  ; \
             yum install epel-release -y ; \
-            yum install -y python-pip gcc gcc-c++ make python-devel wget openssh openssh-server bzip2 git vim nodejs yarn libffi libffi-devel freetype-devel curl-devel mysql-devel libvirt libvirt-devel bzip2 wget; \
+            yum install -y python-pip gcc gcc-c++ make python-devel wget openssh openssh-server bzip2 git vim nodejs yarn libffi libffi-devel freetype-devel curl-devel mysql-devel libvirt libvirt-devel; \
             pip install -U pip ; \
             pip install -U wheel setuptools ; \
             pip install -U pyyaml ; \
