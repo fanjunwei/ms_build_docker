@@ -34,7 +34,7 @@ RUN         mkdir -p ~/.pip ; \
             chmod 640 /etc/ssh/ssh_host_ed25519_key; \
             chmod 644 /etc/ssh/ssh_host_ed25519_key.pub; \
             echo "export GOROOT=/usr/local/go" >>~/.bashrc ; \
-            echo "export PATH=$PATH:/usr/local/go/bin" >>~/.bashrc ; \
+            echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.bashrc ; \
             echo -e "123456\n123456" |passwd
 
 ENV GOROOT /usr/local/go
